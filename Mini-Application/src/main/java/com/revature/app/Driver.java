@@ -1,14 +1,26 @@
 package com.revature.app;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import io.javalin.Javalin;
 
 public class Driver {
-	static Food[] foods;
-	static int currentIndex;
+//	static Food[] foods;
+//	static int currentIndex;
+	static List<Food> foods = new ArrayList <Food>();
+	
 	
 	public static void main(String[] args) {
-		currentIndex=0;
-		foods = new Food[10];
+//		currentIndex = 0;
+		foodList();
+	}
+		public static void foodList() {
+//			List<String> foods = new ArrayList<String>();
+		
+//				foods = new Food[10];
 		
 		Javalin app = Javalin.create();
 		
@@ -27,8 +39,8 @@ public class Driver {
 			food.calories = Integer.parseInt(ctx.formParam("calories"));
 			food.price = Integer.parseInt(ctx.formParam("price"));
 			
-			foods[currentIndex] = food;
-			currentIndex++;
+			foods.add(food);
+//			currentIndex++;
 			
 			String responseText = "";
 			
@@ -40,6 +52,6 @@ public class Driver {
 				}
 			
 			ctx.html(responseText);		});
+		}
 	}
-	
-}
+
