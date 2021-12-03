@@ -2,19 +2,30 @@
     <head>
         <title>Mini Food Application</title>
     </head>
+    <Header>
+        <h2>Please Enter The Food Details Below</h2>
+    </Header>
     <body>
         <form action="http://localhost:8080/foods" method="POST">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name"> 
             <br>
+            <br>
             <label for="description">Description:</label>
-            <input type="text" name="description" id="description">
+            <select name="description" id="description">
+                <option>Not Vegetarian</option>
+                <option>Vegetarian</option>
+                <option>Vegan</option>
+            </select>
+            <br>
             <br>
             <label for="calories">Calories:</label>
-            <input type="number" name="calories" id="calories">
+            <input type="number" name="calories" id="calories" min=0>
+            <br>
             <br>
             <label for="price">Price:</label>
-            <input type="number" name="price" id="price">
+            <input type="number" name="price" id="price" min=0>
+            <br>
             <br>
             <button>Submit</button>
 
